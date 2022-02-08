@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   padding: 1rem;
   overflow: hidden;
+  overflow-y: auto;
 }
 .navbar {
   width: 100%;
@@ -111,14 +112,14 @@ main {
   content: "";
 }
 
-.left-content::before{
-    content: '';
-    width: 10px;
-    height: 57%;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    position: absolute;
-    left: -40px;
-    top: 8px
+.left-content::before {
+  content: "";
+  width: 10px;
+  height: 57%;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  position: absolute;
+  left: -40px;
+  top: 8px;
 }
 
 /* right-content */
@@ -140,7 +141,7 @@ main {
   height: 100%;
   width: 80%;
   border-radius: 1.5rem 0 0 1.5rem;
-  transform: translateX(150px);
+  transform: translateX(90px);
 }
 #rc-btn {
   z-index: 1;
@@ -152,8 +153,9 @@ main {
   outline: none;
 }
 #rc-btn > img {
-  height: 45px;
-  width: 45px;
+  height: 100%;
+  width: 100%;
+  max-width: 55px;
 }
 
 /* footer */
@@ -164,7 +166,64 @@ footer {
   justify-content: center;
   align-items: center;
 }
-footer  img {
+footer img {
   margin: 0 20px;
   height: 20px;
+}
+
+/* responsive */
+.menu-icon {
+  width: 25px;
+  margin-right: 15px;
+  display: none;
+  transition: all 0.3s;
+}
+#img-btn {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  border-style: none;
+  background: transparent;
+}
+/* MEDIA QUERY */
+@media (max-width: 760px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    transition: 0.3s;
+  }
+
+  #menu-list {
+    /* position: absolute;
+    top: 78px;
+    right: 0px;
+    overflow: hidden; */
+    position: relative;
+    overflow: hidden; 
+    top: 70px;
+    left: 60px;
+    transition: all 0.3s;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .nav-li {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0px;
+  }
+  .left-content {
+    margin: 40px 0px;
+  }
+
+  .color-box {
+    transform: translateX(60px);
+  }
 }
