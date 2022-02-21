@@ -6,4 +6,4 @@ HTML✔️
 CSS✔️
 Responsividade✔️
 Javascript✔️
-Animações⌛
+Animações✔️
